@@ -1,0 +1,42 @@
+<div class="flex justify-between pt-6 pb-6">
+    <div class="flex flex-col items-center w-2/4 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div 
+            *ngFor="let product of products">
+                <img class=" w-full rounded-t-lg h-fit md:h-auto md:rounded-none md:rounded-l-lg" src="{{product.image}}">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{product.title}}</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{product.price | currency}}</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{product.description}}</p>
+                <h6 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{product.category}}</h6>
+            </div>
+            <div class="flex flex-row justify-between pr-10 pl-10 pb-6">
+                <a routerLink="/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Product lists
+                </a>
+                <button class="ml-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                (click)="addToCart(product)"
+                >add to wishlist</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-2/4 pr-10">
+        <h1 class="text-3xl pb-5">Shipping</h1>
+        <p class="leading-8">
+        Dear valued customer,
+
+Thank you for your interest in our products. We wanted to inform you that shipping prices vary depending on your location and the urgency of the product.
+
+We offer a range of shipping options to meet your needs, including standard shipping, expedited shipping, and overnight shipping. The shipping cost will be calculated based on your location and the urgency of the product.
+
+To get an accurate estimate of the shipping cost, simply enter your shipping address at checkout and the shipping cost will be automatically calculated based on the shipping method you select.
+
+If you have any questions or concerns about shipping, please do not hesitate to contact us. We are always here to assist you and provide you with the best customer service possible.
+
+Thank you for choosing our company for your shopping needs. 
+<a routerLink="/shipping" class="pt-3 pb-3 pr-5 text-blue-600">See shipping prices</a>
+        </p>
+    </div>
+    
+</div>

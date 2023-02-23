@@ -1,27 +1,46 @@
-# UdacityMyStore
+# myStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+This ecommerce application is the final project for my Angular Udacity Nanodegree program, which I have built using Angular and other related technologies.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Angular 15
+* TypeScript
+* HTML
+* CSS
+* Tailwindcss
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To install and run the application locally, follow these steps:
 
-## Build
+1. Clone this repository.
+2. Install dependencies by running `npm install` or `yarn install` in the root directory.
+3. Run `ng serve` to start the development server.
+4. Navigate to http://localhost:4200/ in your web browser to view the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+* Browse products List.
+* View product details including description, price, and image.
+* Add products to cart.
+* Checkout and place orders.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## API Reference
 
-## Running end-to-end tests
+This application uses the `Fakestore Api` to fetch list of products.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Future Improvements
 
-## Further help
+* Implement product search functionality.
+* Implement users sign up and sign in.
+* Allow users to leave product reviews and ratings.
+* Allow users to select the quantity of a specific product.
+* Implement payment with stripe.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Acknowledgements
+
+* Udacity.
+* Fake store Api.
+* Angular.
+* TailwindCss

@@ -1,0 +1,26 @@
+[
+    {
+      "type": "Overnight",
+      "price": 25.99
+    },
+    {
+      "type": "2-Day",
+      "price": 9.99
+    },
+    {
+      "type": "Postal",
+      "price": 2.99
+    },
+    {
+      "type": "3-Day",
+      "price": 7.99
+  },
+  {
+    "type": "7-Day",
+    "price": 4.99
+  },
+  {
+    "type": "30-Day",
+    "price": 0.00
+  }
+  ]

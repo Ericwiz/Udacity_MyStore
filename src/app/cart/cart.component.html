@@ -1,0 +1,64 @@
+<div class="flex flex-col">
+    <!-- <div class="grid grid-rows-2 w-auto h-auto border-2"> -->
+        <div class="flex flex-row justify-between mt-5 mr-10 ml-10 h-auto bg-gray-300 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" 
+        *ngFor="let product of products">
+            <img src="{{product.image}}" class="w-36 h-36">
+            <h3 class="text-white p-2 pt-12 text-2xl">{{product.title}}</h3>
+            <p class="text-gray-300 text-xl pt-12 pl-2 pr-6">{{product.price | currency}}</p>
+    </div>
+
+    <div class="flex flex-row justify-between bg-cyan-700 p-4 mt-6 mx-10 mb-6 text-white rounded-md">
+        <h1 class="text-3xl pl-6">Total Price</h1>
+        <p class="text-2xl pr-6">{{totalPrice | currency}}</p>
+    </div>
+    
+    <div class="pr-40 mx-7">
+        <h3 class="pl-5 mb-5 text-2xl">Shipping Details</h3>
+        <form #form = "ngForm">
+            <div class="ml-5 mb-5">
+                <label for="fullName" class="block text-sm mb-2">Full Name</label>
+                <input 
+                type="text" 
+                value="Agu Obumneme Wisdom" 
+                id="fullName" 
+                name="fullName" required minlength="4"
+                [(ngModel)] ="fullName"
+                class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+            </div>
+            
+            <div class="ml-5 mb-5">
+                <label for="email" class="block text-sm mb-2">Email</label>
+                <input type="email" 
+                name="email" 
+                id="email" 
+                value="yourEmail@gmail.com" required
+                [(ngModel)] ="email"
+                class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+            </div>
+
+            <div class="ml-5 mb-5">
+                <label for="address" class="block text-sm mb-2">Address</label>
+                <input type="text" 
+                name="address" 
+                value="London"
+                id="address" required minlength="3"
+                [(ngModel)] ="address"
+                class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+            </div>
+            <div class="ml-5 mb-5">
+                <label for="shipping" class="block text-sm mb-2" >Shipping Type</label>
+                <input type="text" 
+                name="shipping" 
+                id="shipping" 
+                value="shipping type" 
+                minlength="3" required
+                [(ngModel)]="shippingType"
+                class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+            </div>
+
+            <input routerLink="/success" type="submit" value="Submit" [disabled]="form.invalid"
+            class="cursor-pointer ml-5 pt-2 pb-2 pr-7 mb-3 text-white pl-7 bg-blue-600 rounded-md">
+        </form>
+        
+    </div>
+</div>
