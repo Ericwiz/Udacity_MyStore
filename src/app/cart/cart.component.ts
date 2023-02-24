@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 
@@ -20,12 +21,19 @@ export class CartComponent implements OnInit{
   constructor(private cartService: CartService, private productService: ProductService){}
   products = this.cartService.getProducts()
 
+  cartProduct!: Product
   totalPrice = 0;
   
   ngOnInit(): void {
-    
      this.totalPrice = this.cartService.getProducts().map(product => product.price).reduce((acc, value) => acc + value, 0)
       
+  }
+
+  removeProductFromCart(product: Product) {
+    
+    alert('Product will be removed from the cart!')
+   this.cartService.removeProductFromCart(product);
+   this.totalPrice = this.cartService.getProducts().map(product => product.price).reduce((acc, value) => acc - value, 0)
     
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ShippingService } from '../services/shipping.service';
 import { Shipping } from '../models/shipping';
 import { Observable } from 'rxjs';
@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit{
-  shippingPrice!: Observable<Shipping[]>
-  constructor(private shippingService: ShippingService) {}
+@Input() shipping!: Shipping
+  constructor() {}
 
  ngOnInit(): void {
-  this.shippingPrice = this.shippingService.productShipping()
+  // this.shipping = this.shippingService.productShipping()
  }
 }

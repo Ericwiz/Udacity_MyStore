@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { Shipping } from '../models/shipping';
 import { ShippingService } from '../services/shipping.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
@@ -13,13 +14,16 @@ import { ShippingService } from '../services/shipping.service';
 })
 export class ProductDetailsComponent implements OnInit{
   products!: Product[]
+  shippingPrice!: Shipping[]
   constructor(
     private productService: ProductService,
      private route: ActivatedRoute,
      private cartService: CartService,
+     private shippingService: ShippingService
      ) {
 
   }
+
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const currentRoute = Number(routeParams.get('id'));
@@ -33,9 +37,14 @@ export class ProductDetailsComponent implements OnInit{
 
       
     });
+
+     this.shippingService.productShipping().subscribe(res => this.shippingPrice = res
+
+     )
   }
   addToCart(product: Product) {
       this.cartService.addProductToCart(product)
       alert("Product has been added to the cart")
+      
   }
 }

@@ -10,7 +10,10 @@ export class CartService {
   constructor() { }
 
   addProductToCart(product: Product) {
-    this.items.push(product)
+    if (!this.items.some(p => p.id === product.id)) {
+      this.items.push(product);
+    }
+    
   }
 
   getProducts() {
@@ -20,5 +23,11 @@ export class CartService {
   clearCart() {
     this.items = []
     return this.items;
+  }
+  removeProductFromCart(product: Product) {
+    const index = this.items.indexOf(product);
+    if(index > -1) {
+      this.items.splice(index, 1);
+    }
   }
 }

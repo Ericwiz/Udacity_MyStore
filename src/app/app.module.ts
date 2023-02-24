@@ -21,7 +21,7 @@ import { SuccessfulPageComponent } from './successful-page/successful-page.compo
     CartComponent,
     NavBarComponent,
     ShippingComponent,
-    SuccessfulPageComponent
+    SuccessfulPageComponent,
   ],
   imports: [
     BrowserModule,

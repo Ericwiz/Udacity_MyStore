@@ -5,6 +5,7 @@
             <img src="{{product.image}}" class="w-36 h-36">
             <h3 class="text-white p-2 pt-12 text-2xl">{{product.title}}</h3>
             <p class="text-gray-300 text-xl pt-12 pl-2 pr-6">{{product.price | currency}}</p>
+            <button type="button" class="text-white bg-red-600 rounded-md mr-4" (click)="removeProductFromCart(product)">Remove</button>
     </div>
 
     <div class="flex flex-row justify-between bg-cyan-700 p-4 mt-6 mx-10 mb-6 text-white rounded-md">

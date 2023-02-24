@@ -20,23 +20,12 @@
         </div>
     </div>
 
-
-    <div class="w-2/4 pr-10">
-        <h1 class="text-3xl pb-5">Shipping</h1>
-        <p class="leading-8">
-        Dear valued customer,
-
-Thank you for your interest in our products. We wanted to inform you that shipping prices vary depending on your location and the urgency of the product.
-
-We offer a range of shipping options to meet your needs, including standard shipping, expedited shipping, and overnight shipping. The shipping cost will be calculated based on your location and the urgency of the product.
-
-To get an accurate estimate of the shipping cost, simply enter your shipping address at checkout and the shipping cost will be automatically calculated based on the shipping method you select.
-
-If you have any questions or concerns about shipping, please do not hesitate to contact us. We are always here to assist you and provide you with the best customer service possible.
-
-Thank you for choosing our company for your shopping needs. 
-<a routerLink="/shipping" class="pt-3 pb-3 pr-5 text-blue-600">See shipping prices</a>
-        </p>
+    
+    <div class="flex flex-col pr-32 w-2/4">
+        <h1 class="pb-5 pt-3 pl-7 text-3xl">Shipping Prices</h1>
+        <app-shipping *ngFor="let shippingPrices of shippingPrice" [shipping]="shippingPrices"></app-shipping>
+        <p class="pl-5 pt-5">Dear valued customer, we wish to inform you that the shipping prices is based on the urgency and how soon you need the product to be delivered. If you require expedited shipping or next-day delivery, the shipping price will be higher than standard shipping. We strive to offer competitive shipping rates while ensuring that your package arrives safely and promptly. If you have any further questions about our shipping rates or would like to place an order, please do not hesitate to contact us.</p>
     </div>
+   
     
 </div>
