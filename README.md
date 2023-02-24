@@ -1,6 +1,6 @@
 # myStore
 
-This ecommerce application is the final project for my Angular Udacity Nanodegree program, which I have built using Angular and other related technologies.
+This ecommerce application is the final project for my Fullstck Javascript Udacity Nanodegree program, which I have built using Angular and other related technologies.
 
 ## Technologies Used
 
