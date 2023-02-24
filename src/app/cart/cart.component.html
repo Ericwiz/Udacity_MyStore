@@ -5,7 +5,8 @@
             <img src="{{product.image}}" class="w-36 h-36">
             <h3 class="text-white p-2 pt-12 text-2xl">{{product.title}}</h3>
             <p class="text-gray-300 text-xl pt-12 pl-2 pr-6">{{product.price | currency}}</p>
-            <button type="button" class="text-white bg-red-600 rounded-md mr-4" (click)="removeProductFromCart(product)">Remove</button>
+            <button type="button" class="text-red-600 text-3xl rounded-md pr-10" (click)="removeProductFromCart(product)">
+                <fa-icon [icon]="delete"></fa-icon></button>
     </div>
 
     <div class="flex flex-row justify-between bg-cyan-700 p-4 mt-6 mx-10 mb-6 text-white rounded-md">
@@ -22,9 +23,11 @@
                 type="text" 
                 value="Agu Obumneme Wisdom" 
                 id="fullName" 
-                name="fullName" required minlength="4"
+                name="fullName" required minlength="6"
                 [(ngModel)] ="fullName"
+                (ngModelChange)="checkUsername()"
                 class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+                <p class="text-red-600" *ngIf="fullNameError">{{fullNameError}}</p>
             </div>
             
             <div class="ml-5 mb-5">
@@ -34,7 +37,9 @@
                 id="email" 
                 value="yourEmail@gmail.com" required
                 [(ngModel)] ="email"
+                (ngModelChange)="validateEmail()"
                 class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+                <p class="text-red-600" *ngIf="emailError">{{emailError}}</p>
             </div>
 
             <div class="ml-5 mb-5">
@@ -42,9 +47,11 @@
                 <input type="text" 
                 name="address" 
                 value="London"
-                id="address" required minlength="3"
-                [(ngModel)] ="address"
+                id="address" required minlength="6"
+                [(ngModel)]="address"
+                (ngModelChange)="validateAddress()"
                 class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+                <p class="text-red-600" *ngIf="addressError">{{addressError}}</p>
             </div>
             <div class="ml-5 mb-5">
                 <label for="shipping" class="block text-sm mb-2" >Shipping Type</label>
@@ -52,12 +59,18 @@
                 name="shipping" 
                 id="shipping" 
                 value="shipping type" 
-                minlength="3" required
+                minlength="5" required
                 [(ngModel)]="shippingType"
+                (ngModelChange)="validateShipping()"
                 class="bg-gray-200 border-slate-400 border-solid border-2 w-3/4 py-1 pl-2 rounded-md">
+                <p class="text-red-600" *ngIf="shippingError">{{shippingError}}</p>
             </div>
 
-            <input routerLink="/success" type="submit" value="Submit" [disabled]="form.invalid"
+            <input 
+            routerLink="/success" 
+            type="submit" 
+            value="Submit" 
+            [disabled]="form.invalid"
             class="cursor-pointer ml-5 pt-2 pb-2 pr-7 mb-3 text-white pl-7 bg-blue-600 rounded-md">
         </form>
         
